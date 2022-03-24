@@ -1,6 +1,16 @@
 <?php
 require_once(__DIR__ . '/Menus/PrimaryMenuWalker.php');
 require_once(__DIR__ . '/Menus/PrimaryMenuItem.php');
+require_once(__DIR__ . '/Forms/BaseFormController.php');
+require_once(__DIR__ . '/Forms/ContactFormController.php');
+require_once(__DIR__ . '/Forms/Sanitizers/BaseSanitizer.php');
+require_once(__DIR__ . '/Forms/Sanitizers/EmailSanitizer.php');
+require_once(__DIR__ . '/Forms/Sanitizers/TextSanitizer.php');
+require_once(__DIR__ . '/Forms/Validators/BaseValidator.php');
+require_once(__DIR__ . '/Forms/Validators/AcceptedValidator.php');
+require_once(__DIR__ . '/Forms/Validators/EmailValidator.php');
+require_once(__DIR__ . '/Forms/Validators/RequiredValidator.php');
+
 // Lancer la sessions PHP pour pouvoir passer des variables de page en page
 add_action('init', 'dw_start_session', 1);
 
@@ -16,17 +26,17 @@ add_filter('use_block_editor_for_post', '__return_false');
 add_theme_support('post-thumbnails');
 //Enregistrer un seul custom post-type pour nos voyages
 register_post_type('projet',[
-    'label'=>'Portefolios',
-    'description'=>'Portefolio pour présenter mes projets réaliser dans le cadre de mes études',
+    'label'=>'Portfolios',
+    'labels'=>[
+        'name'=>'Portfolios',
+        'singular_name'=>'Portfolio'
+    ],
+    'description'=>'Portfolio pour présenter mes projets réaliser dans le cadre de mes études',
     'menu_position'=>5,
     'menu_icon'=>'dashicons-portfolio',
     'public' =>true,
     'has_archive'=>true,
     'show_ui' => true,
-    'labels'=>[
-        'name'=>'Portefolios',
-        'singular_name'=>'Portefolio'
-    ],
     'supports' => [
         'title',
         'editor',
@@ -46,7 +56,7 @@ register_post_type('message', [
     'description' => 'Les messages envoyés par le formulaire de contact.',
     'public' => false,
     'show_ui' => true,
-    'menu_position' => 15,
+    'menu_position' => 10,
     'menu_icon' => 'dashicons-buddicons-pm',
     'capabilities' => [
         'create_posts' => false,

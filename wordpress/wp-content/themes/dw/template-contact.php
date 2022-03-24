@@ -1,13 +1,10 @@
-<?php /*Template Name: Contact page template*/;?>
-<?php get_header();?>
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-	<main  class="layout contact">
-		<h2 class="contact__title"><?= get_the_title()?></h2>
-		<figure class="contact__fig">
-			<?= get_the_post_thumbnail(null,'medium_large',['class'=>'contact__thumb']);?>
-		</figure>
+<?php /* Template Name: Contact page template */ ?>
+<?php get_header(); ?>
+<?php if(have_posts()): while(have_posts()): the_post(); ?>
+	<main class="layout contact">
+		<h2 class="contact__title"><?= get_the_title(); ?></h2>
 		<div class="contact__content">
-			<?php the_content();?>
+			<?php the_content(); ?>
 		</div>
 		<?php if(! isset($_SESSION['contact_form_feedback']) || ! $_SESSION['contact_form_feedback']['success']) : ?>
 			<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form" id="contact">
@@ -56,7 +53,5 @@
 			<p id="contact">Merci ! Votre message a bien été envoyé.</p>
 			<?php unset($_SESSION['contact_form_feedback']); endif; ?>
 	</main>
-<?php endwhile;?>
-<?php endif;?>
-<?php get_footer()?>
-
+<?php endwhile; endif; ?>
+<?php get_footer(); ?>
