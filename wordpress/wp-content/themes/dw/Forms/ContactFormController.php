@@ -47,8 +47,8 @@ class ContactFormController extends BaseFormController
     {
         // Traitement
         $id = wp_insert_post([
-            'post_title' => 'Message de ' . $this->data['firstname'] . ' ' . $this->data['lastname'], 
-            'post_type' => 'message', 
+            'post_title' => 'Message de ' . $this->data['firstname'] . ' ' . $this->data['lastname'],
+            'post_type' => 'message',
             'post_content' => $this->data['message'],
             'post_status' => 'publish'
         ]);
@@ -67,7 +67,7 @@ class ContactFormController extends BaseFormController
         $_SESSION['contact_form_feedback'] = [
             'success' => true,
         ];
-        
+
         return wp_safe_redirect($this->data['_wp_http_referer'] . '#contact', 302);
     }
 }
