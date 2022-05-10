@@ -1,0 +1,193 @@
+/*
+Theme Name: Projet portefolio DW
+Text Domain: portfolio
+Version: 1.0
+Tested up to: 5.9
+Requires at least: 5.9
+Requires PHP: 7.4.26
+Description: Ceci est un projet de test dans le cadre du cours de DW
+Author: Batta Gwenaelle
+Author URI: https://gwenaelle-batta.be
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*-------------------------------FIN DU RESET----------------------*/
+body {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    line-height: 1.3em;
+    margin-bottom: 15px;
+}
+
+img {
+    margin-bottom: 15px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+.socials__title{
+    font-size: 16px;
+}
+.socials__list{
+    display: flex;
+}
+.socials__item{
+    margin-right: 15px;
+}
+section, article {
+    /*margin-bottom: 30px;*/
+    margin-right: 30px;
+
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+}
+
+.contact__form > label, .contact__form > input[type='submit'] {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.projets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projets > article {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.projets a {
+    background-color: #9EBAA0;
+    justify-self: flex-end;
+    padding: 10px;
+}
+
+.projets p {
+    flex: 1;
+}
+
+.nav__body {
+    margin-top: 50px;
+}
+
+.hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
+}
+
+.main section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.positionnement{
+    display: flex;
+}
+.parcours__title{
+    align-self: flex-end;
+}
+.parcours__picture{
+    order: 2;
+}
+
+.nav__list, .reseaux__list {
+    display: flex;
+}
+
+.nav__item, .reseaux__item {
+    margin-right: 30px;
+}
