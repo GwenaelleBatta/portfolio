@@ -144,6 +144,19 @@ function portfolio_get_school($count = 20){
     //2. on retourne l'objet WP_Query
     return $schools;
 }
+function portfolio_get_template_page(string $template){
+    $query = new WP_Query([
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_query' => [
+            [
+                'key' => '_wp_page_template',
+                'value' => $template . '.php',
+            ],
+        ]
+    ]);
+    return $query->posts[0] ?? null;
+}
 register_nav_menu('primary', 'Navigation principale (haut de page)');
 register_nav_menu('footer', 'Navigation de pied de page');
 function portfolio_get_menu_items($location)

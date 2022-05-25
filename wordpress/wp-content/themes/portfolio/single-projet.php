@@ -1,31 +1,41 @@
 <?php get_header(); ?>
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
-	<main class="layout singleProjet">
+	<main class="layout__singleProjet">
 		<section aria-labelledby="singleProjet" class="singleProjet__section">
-			<h2 id="singleProjet" class="singleProjet__title"><?= get_the_title() ?></h2>
-			<a href="#" class="singleProjet__link"><?= __('Retour aux projets', 'portfolio') ?></a>
-			<?php if ($icon = get_field('icon')): ?>
-				<figure class="singleProjet__fig">
-					<img src="<?= wp_get_attachment_image_src($icon, 'medium_large')[0] ?? null; ?>"
-						 alt="icône du projet <?= get_the_title() ?>">
-				</figure>
-			<?php endif; ?>
-			<div class="project__excerpt">
-				<p class="project__description">
+			<h2 id="singleProjet" class="singleProjet__title" aria-level="2"><?= get_the_title() ?></h2>
+			<a href="<?= get_post_type_archive_link('projet') ?>"
+			   class="singleProjet__return"><?= __('Retour aux projets', 'portfolio') ?></a>
+			<div class="singleProject__excerpt">
+				<p class="singleProject__description">
 					<?= get_field('excerpt') ?>
 				</p>
 			</div>
 		</section>
-		<section aria-labelledby="description" class="project__description">
-			<h2 id="description" class="project__title"><?=__('Description','portfolio')?></h2>
-			<p class="project__description"><?= get_the_excerpt()?></p>
+		<section aria-labelledby="description" class="singleProject__description">
+			<h2 id="description" class="singleProject__title" aria-level="2"><?= __('Description', 'portfolio') ?></h2>
+			<p class="singleProject__description"><?= get_the_content() ?></p>
 		</section>
 		<figure class="singleProjet__fig">
-			<?= get_the_post_thumbnail(null, 'medium_large', ['class' => 'singleProjet__thumb']); ?>
+			<?= get_the_post_thumbnail(null, 'post-thumbnail', ['class' => 'singleProjet__thumb']); ?>
 		</figure>
-		<a href="#" class="singleProjet__link"><?=__('Projet précédent','portfolio')?></a>
-		<a href="<?=get_field('lien')?>" class="singleProjet__link"><?=__('Aller vers le site','portfolio')?></a>
-		<a href="#" class="singleProjet__link"><?=__('Projet suivant','portfolio')?></a>
+		<div class="singleProjet__nav">
+			<?php if( get_adjacent_post(false, '', false) ) {
+				next_post_link('%link', ' %title');
+			} else {
+				$last = new WP_Query('post_type=projet&posts_per_page=1&order=ASC'); $last->the_post();
+				echo '<a href="' . get_permalink() . '">' . get_the_title() .'</a>';
+				wp_reset_query();
+			};  ?>
+			<a href="<?= get_field('lien') ?>"
+			   class="singleProjet__link"><?= __('Aller vers le site', 'portfolio') ?></a>
+			<?php if( get_adjacent_post(false, '', true) ) {
+				previous_post_link('%link', '%title ');
+			} else {
+				$first = new WP_Query('post_type=projet&posts_per_page=1&order=DESC'); $first->the_post();
+				echo '<a href="' . get_permalink() . '">' . get_the_title() .'</a>';
+				wp_reset_query();
+			}; ?>
+		</div>
 	</main>
 <?php endwhile; ?>
 <?php endif; ?>

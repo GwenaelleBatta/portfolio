@@ -50,12 +50,8 @@ class PrimaryMenuItem
 
     public function getBemClasses($base)
     {
-        $icon = get_field('icon', $this->post);
         $modifiers = [];
 
-        if ($icon) {
-            $modifiers[] = $icon;
-        }
         if ($this->post->object_id == get_queried_object_id()) {
             $modifiers[] = 'current';
         }
