@@ -28,7 +28,7 @@
 				next_post_link('%link', ' %title');
 			} else {
 				$last = new WP_Query('post_type=projet&posts_per_page=1&order=ASC'); $last->the_post();
-				echo '<a href="' . get_permalink() . '">' . get_the_title() .'</a>';
+				echo '<a  href="' . get_permalink() . '">' . get_the_title() .'</a>';
 				wp_reset_query();
 			};  ?>
 			<a href="<?= get_field('lien') ?>"
@@ -37,7 +37,7 @@
 				previous_post_link('%link', '%title ');
 			} else {
 				$first = new WP_Query('post_type=projet&posts_per_page=1&order=DESC'); $first->the_post();
-				echo '<a href="' . get_permalink() . '">' . get_the_title() .'</a>';
+				echo '<a  href="' . get_permalink() . '">' . get_the_title() .'</a>';
 				wp_reset_query();
 			}; ?>
 		</div>

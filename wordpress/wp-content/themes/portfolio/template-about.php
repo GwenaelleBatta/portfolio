@@ -25,8 +25,11 @@
 				</ul>
 			</section>
 		</div>
-		<a href="https://projet-cv.gwenaelle-batta.be/" class="about__cv"><?= __('Voir mon CV', 'portfolio') ?></a>
-		<a href="<?=get_the_permalink(portfolio_get_template_page('template-contact'))?>" class="about__contact"><?= __('Me contacter', 'portfolio') ?></a>
+		<div class="about__nav">
+			<a href="https://projet-cv.gwenaelle-batta.be/" class="about__cv"><?= __('Voir mon CV', 'portfolio') ?></a>
+			<a href="<?= get_the_permalink(portfolio_get_template_page('template-contact')) ?>"
+			   class="about__contact"><?= __('Me contacter', 'portfolio') ?></a>
+		</div>
 	</main>
 <?php endwhile; ?>
 <?php endif; ?>
