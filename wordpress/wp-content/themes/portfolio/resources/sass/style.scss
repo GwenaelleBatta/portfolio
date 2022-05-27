@@ -68,10 +68,10 @@ nav {
   justify-content: center;
 
 }
-.nav__item--current a{
-  border: 1px solid rgba(244,244,244,.6);
-  border-radius: 0px 25px;
-}
+//.nav__item--current a{
+//  border: 1px solid rgba(244,244,244,.6);
+//  border-radius: 0px 25px;
+//}
 .nav__link {
   text-align: center;
   text-decoration: none;
@@ -80,7 +80,10 @@ nav {
   font-weight: 600;
   padding: 7px 10px;
 }
-
+.nav__link:hover{
+  border: 1px solid rgba(244,244,244,.6);
+  border-radius: 0px 25px;
+}
 .intro{
   text-align: center;
   margin: 0 auto;
@@ -113,11 +116,28 @@ nav {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 160px;
+  //margin-top: 160px;
 }
-.projects__title + .project__link, .singleProjet__return{
+.footer__link{
+  text-decoration: none;
+  color: #ABD4D0;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.footer__link:hover{
+  color: #FFFFFF;
+}
+.singleProjet__return{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ABD4D0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.projects__title + .project__link{
   position: absolute;
-  right: 0;
+  right: 5%;
   top: 5%;
   text-transform: uppercase;
   text-decoration: none;
@@ -125,6 +145,9 @@ nav {
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 18px;
+}
+article.projects__article:first-of-type{
+  margin-top: 0px;
 }
 .projects__article, .project {
   flex: 1;
@@ -176,7 +199,10 @@ nav {
   text-transform: uppercase;
   border: none;
 }
-
+.projects__link:hover, .intro__link:hover, .project .project__link:hover, .form__button:hover{
+  color: #ABD4D0;
+  background-color: #FFFFFF;
+}
 .projects__article:nth-child(even) .projects__picture{
   border: solid 3px #ECC4C4;
   border-radius: 0px 172px;
@@ -199,8 +225,8 @@ nav {
   top: 20px;
   left: -20px;
 }
-.projects__header .projects__title, .about .about__title, .contact .contact__title{
-  margin: 80px 0px;
+.projects__header h2.projects__title, .about .about__title, .contact .contact__title, .projects h2.projects__title, .legales__title{
+  margin: 100px 80px;
 }
 .projects__article:nth-child(even) .projects__picture .projects__fig{
   position: relative;
@@ -216,8 +242,9 @@ nav {
   border-radius: 172px 0px;
 }
 .who, .career{
-  margin-bottom: 30px;
+  margin-bottom: 120px;
 }
+
 .who__paragraph, .career__paragraph {
   max-width: 664px;
 }
@@ -231,15 +258,22 @@ nav {
   margin-top: 30px;
 }
 .career__item{
-  margin: 0px 60px;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
 }
-h3.projects__title, .project__title, .career__title, .who__title, .contact__section .contact__title, .form__title, .coordinate__title{
+
+.coordinates__title{
+  font-weight: 600;
+}
+h3.projects__title, .project__title, .career__title, .who__title, .contact__section .contact__title, .form__title, .coordinate__title, .confident__title, {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 30px;
   color: #000000;
 }
-.coordinate__title, .form__title{
+
+.coordinate__title, .form__title, .confident__title, .career__title, .who__title,{
   margin-bottom: 50px;
 }
 .form__checklabel a{
@@ -256,14 +290,21 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   display: flex;
   flex-direction: column;
 }
+.singleProjet__picture{
+  display: inline-flex;
+  justify-content: center;
+}
 .singleProjet__fig{
-  flex: 1;
-  max-height: 480px;
-  width: 100%;
+  border: solid 3px #ECC4C4;
+  border-radius: 240px 0px;
 }
 .singleProjet__thumb{
+  position: relative;
+  top: 20px;
+  left: -20px;
   border-radius: 240px 0px;
   box-shadow: -10px 3px 6px #C2C2C2;
+
 }
 .projects__cards, .project__cards {
   max-width: 487px;
@@ -277,17 +318,33 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   margin-right: 90px;
   order: -1;
 }
-.singleProjet__section{
-  position: relative;
+.singleProjet__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 100px 80px;
+}
+
+.singleProject__description, .singleProject__excerpt{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.singleProject__description .singleProject__title{
+  margin-bottom: 25px;
 }
 p.singleProject__description{
   max-width: 665px;
+  margin-bottom: 80px;
 }
 .singleProjet__nav{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(2,1fr);
   justify-items: center;
+  margin-top: 83px;
+  margin-bottom: 160px;
 }
 div.singleProjet__nav a.singleProjet__link{
   grid-column: 2;
@@ -301,6 +358,10 @@ div.singleProjet__nav a.singleProjet__link{
   text-decoration: none;
   text-transform: uppercase;
   border: none;
+}
+div.singleProjet__nav a.singleProjet__link:hover{
+  background-color: #FFFFFF;
+  color: #ABD4D0;
 }
 .singleProjet__nav a:first-child{
   grid-column: 1;
@@ -329,7 +390,7 @@ div.singleProjet__nav a.singleProjet__link{
 .contact__paragraph{
   margin-top: 40px;
 }
-.contact__section{
+.contact__section , .legales__section{
   margin-bottom: 70px;
   margin-left: 0px;
   margin-right: 0px;
@@ -339,7 +400,20 @@ div.singleProjet__nav a.singleProjet__link{
   display: flex;
   flex-direction: column;
   max-width: 664px;
-  margin: 0 auto;
+}
+.legales__position{
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+.about__position{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.confident{
+  flex: 1;
+  max-width: 664px;
 }
 .form{
   margin-bottom: 100px;

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="layout__project">
-	<section aria-labelledby="project" class=" projects__header">
+	<section aria-labelledby="project" class=" projects">
 		<h2 id="project" class="projects__title" aria-level="2"><?= __('Liste de mes projets', 'portfolio') ?></h2>
 	</section>
 		<section class="projects">

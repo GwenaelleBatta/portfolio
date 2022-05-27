@@ -2,9 +2,11 @@
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 	<main class="layout__singleProjet">
 		<section aria-labelledby="singleProjet" class="singleProjet__section">
-			<h2 id="singleProjet" class="singleProjet__title" aria-level="2"><?= get_the_title() ?></h2>
-			<a href="<?= get_post_type_archive_link('projet') ?>"
-			   class="singleProjet__return"><?= __('Retour aux projets', 'portfolio') ?></a>
+			<div class="singleProjet__header">
+				<h2 id="singleProjet" class="singleProjet__title" aria-level="2"><?= get_the_title() ?></h2>
+				<a href="<?= get_post_type_archive_link('projet') ?>"
+				   class="singleProjet__return"><?= __('Retour aux projets', 'portfolio') ?></a>
+			</div>
 			<div class="singleProject__excerpt">
 				<p class="singleProject__description">
 					<?= get_field('excerpt') ?>
@@ -15,9 +17,12 @@
 			<h2 id="description" class="singleProject__title" aria-level="2"><?= __('Description', 'portfolio') ?></h2>
 			<p class="singleProject__description"><?= get_the_content() ?></p>
 		</section>
-		<figure class="singleProjet__fig">
-			<?= get_the_post_thumbnail(null, 'post-thumbnail', ['class' => 'singleProjet__thumb']); ?>
-		</figure>
+		<div class="singleProjet__picture">
+			<figure class="singleProjet__fig">
+				<img class="singleProjet__thumb" src="<?= get_field('grande_image') ?>"
+					 alt="<?= __('Photo du projet ', 'portfolio') ?>">
+			</figure>
+		</div>
 		<div class="singleProjet__nav">
 			<?php if( get_adjacent_post(false, '', false) ) {
 				next_post_link('%link', ' %title');
