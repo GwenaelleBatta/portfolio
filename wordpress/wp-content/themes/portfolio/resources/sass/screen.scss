@@ -1,0 +1,52 @@
+@media (min-width: 1710px){
+  //-----------------------1
+  body{
+    font-size: 20px;
+  }
+  //-----------------------10
+  .intro{
+    min-height: 55em;
+  }
+
+  .intro__title{
+    padding: 7.5em 0 2em 0;
+  }
+
+  .nav__logo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+
+  .layout__singleProjet{
+    margin-bottom: 5em;
+  }
+
+  .layout__contact{
+    margin-bottom: 6em;
+  }
+
+  .legales__position {
+    margin-bottom: 9.5em;
+  }
+  //-----------------------20
+
+  .nav__checkbox, .burger { /*20*/
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
+  }
+
+}

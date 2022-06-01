@@ -1,6 +1,3 @@
-<?php
-
-?>
 <footer class="footer">
     <section aria-labelledby="footer" class="footer__body">
         <h2 id="footer" class="footer__title hidden" aria-level="2">Pied de la page de mon <?= get_bloginfo('name')?></h2>
