@@ -10,8 +10,8 @@
 				<h2 id="who" class="who__title" aria-level="2"><?= __('Qui suis-je ?', 'portfolio') ?></h2>
 				<p class="who__paragraph"><?= get_field('me'); ?></p>
 			</section>
-			<section class="about__career career">
-				<h2 class="career__title" aria-level="2"><?= __('Mon parcours', 'portfolio') ?></h2>
+			<section  aria-labelledby="career" class="about__career career">
+				<h2 id="career" class="career__title" aria-level="2"><?= __('Mon parcours', 'portfolio') ?></h2>
 				<p class="career__paragraph"><?= get_the_content(); ?></p>
 				<ul class="career__list">
 					<?php if (($school = portfolio_get_school())->have_posts()):while ($school->have_posts()): $school->the_post(); ?>

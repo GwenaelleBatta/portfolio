@@ -1,17 +1,19 @@
-@media (min-width: 1710px){
+@media (min-width: 1710px) {
   //-----------------------1
-  body{
+  body {
     font-size: 20px;
   }
   //-----------------------10
-  .intro{
+  .intro {
     min-height: 55em;
   }
 
-  .intro__title{
+  .intro__title {
     padding: 7.5em 0 2em 0;
   }
-
+  .nav__position{
+    display: flex;
+  }
   .nav__logo {
     position: absolute;
     width: 1px;
@@ -24,11 +26,11 @@
     border: 0;
   }
 
-  .layout__singleProjet{
+  .layout__singleProjet {
     margin-bottom: 5em;
   }
 
-  .layout__contact{
+  .layout__contact {
     margin-bottom: 6em;
   }
 

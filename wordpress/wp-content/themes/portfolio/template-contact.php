@@ -17,11 +17,11 @@
 								<a href="mailto:gwenaellebatta@gmail.com">gwenaellebatta@gmail.com</a>
 							</p>
 						</section>
-						<section aria-labelledby="phone" class="coordinates__phone">
-							<h4 id="phone" class="coordinates__title"
+						<section aria-labelledby="telephone" class="coordinates__phone">
+							<h4 id="telephone" class="coordinates__title"
 								aria-level="4"><?= __('Téléphone', 'portfolio') ?></h4>
 							<p class="coordinates__mail phone">
-								+42 (0)491 30 53 40
+								+32 (0)491 30 53 40
 							</p>
 						</section>
 						<section aria-labelledby="address" class="coordinates__address" itemscope
@@ -42,7 +42,7 @@
 						aria-level="2"><?= __('Formulaire de contact', 'portfolio') ?></h2>
 					<?php if (!isset($_SESSION['contact_form_feedback']) || !$_SESSION['contact_form_feedback']['success']) : ?>
 						<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="form__form "
-							  id="contact">
+							  id="contact-form">
 							<?php if (isset($_SESSION['contact_form_feedback'])) : ?>
 								<p><?= __('Oups ! Il y a des erreurs dans le formulaire', 'portfolio') ?></p>
 							<?php endif; ?>
@@ -95,7 +95,7 @@
 							</div>
 						</form>
 					<?php else : ?>
-						<p id="contact"><?= __('Merci ! Votre message a bien été envoyé.', 'portfolio') ?></p>
+						<p><?= __('Merci ! Votre message a bien été envoyé.', 'portfolio') ?></p>
 						<?php unset($_SESSION['contact_form_feedback']); endif; ?>
 				</section>
 			</div>
