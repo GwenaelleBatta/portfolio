@@ -17,6 +17,7 @@
 		<a href="<?=get_the_permalink(portfolio_get_template_page('template-legale'))?>" class="footer__link"><?= __('Mentions légales', 'portfolio') ?></a>
     </section>
 </footer>
+<canvas width="1000" class="canvas"></canvas>
 <script type="text/javascript" src="<?= portfolio_mix('/js/script.js'); ?>"></script>
 </body>
 </html>
