@@ -6,8 +6,10 @@
 		<?php if (($networks = portfolio_get_networks())->have_posts()):while ($networks->have_posts()): $networks->the_post(); ?>
 			<li class="footer_item">
 				<figure class="footer__fig">
-					<a href="<?= get_field('network') ?>" class="project__link">
-						<?= get_the_post_thumbnail(null, 'post-thumbnail', ['class' => 'footer__thumb']); ?>
+					<a href="<?= get_field('network') ?>" class="project__link test">
+						<img src="<?php the_post_thumbnail_url(); ?>"
+							 class="footer__thumb style-svg <?= get_post_field('post_name', get_post()); ?>"
+							 alt="<?= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>">
 					</a>
 				</figure>
 			</li>

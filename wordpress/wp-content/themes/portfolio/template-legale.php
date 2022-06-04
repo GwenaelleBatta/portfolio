@@ -7,20 +7,21 @@
         </section>
 		<div class="legales__position">
 			<section aria-labelledby="coordinates" class="legales__section">
-				<h2 id="coordinates" class="coordinate__title" aria-level="2"><?= __('Coordonnées', 'portfolio') ?></h2>
-				<section aria-labelledby="coordinate" class="coordinates">
+				<h2 id="coordinates" class="coordinate__title"
+					aria-level="2"><?= __('Coordonnées', 'portfolio') ?></h2>
+				<section aria-labelledby="coordinate" class="coordinates" itemscope itemtype="https://schema.org/Person">
 					<h3 id="coordinate" class="coordinates__title hidden"
 						aria-level="3"><?= __('Mes coordonnées') ?></h3>
 					<section aria-labelledby="mail" class="coordinates__mail">
 						<h4 id="mail" class="coordinates__title" aria-level="4"><?= __('Mail', 'portfolio') ?></h4>
-						<p class="coordinates__mail mail">
-							<a href="mailto:gwenaellebatta@gmail.com">gwenaellebatta@gmail.com</a>
+						<p class="coordinates__mail mail" >
+							<a href="mailto:gwenaellebatta@gmail.com" itemprop="email">gwenaellebatta@gmail.com</a>
 						</p>
 					</section>
-					<section aria-labelledby="phone" class="coordinates__phone">
-						<h4 id="phone" class="coordinates__title"
+					<section aria-labelledby="telephone" class="coordinates__phone">
+						<h4 id="telephone" class="coordinates__title"
 							aria-level="4"><?= __('Téléphone', 'portfolio') ?></h4>
-						<p class="coordinates__mail phone">
+						<p class="coordinates__mail phone" itemprop="telephone">
 							+32 (0)491 30 53 40
 						</p>
 					</section>

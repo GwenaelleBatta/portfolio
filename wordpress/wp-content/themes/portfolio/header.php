@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="author" content="Batta Gwenaëlle">
 	<meta name="viewport"
-		  content="width=device-width, initial-scale=1.0>
+		  content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="Batta Gwenaëlle">
 	<meta name="description" content="Projet Portfolio">
@@ -16,7 +16,7 @@
 	<link rel="manifest" href="./site.webmanifest">
 	<meta name="msapplication-TileColor" content="#9f00a7">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" type="text/css" href="<?= portfolio_mix('css/style.css'); ?>">
+	<link rel="stylesheet" type="text/css" media="screen" href="<?= portfolio_mix('css/style.css'); ?>">
 	<?php wp_head(); ?>
 </head>
 <body aria-labelledby="projet-portfolio">

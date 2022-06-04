@@ -32,9 +32,9 @@ class Portfolio_Controller {
                 // d'intersection pour un des éléments cible:
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
-                }
+                } //else {
+                    //entry.target.classList.remove('active');
+                //}
             });
         };
 
@@ -51,9 +51,10 @@ class Portfolio_Controller {
             }
             let x = (Math.random() * (canvas.width));
             let y = Math.random() * 150;
-            console.log(y)
-            console.log(canvas.height)
+            console.log(y);
+            console.log(canvas.height);
             let ctx = canvas.getContext('2d');
+            const color = '#D4E4E5';
             window.addEventListener('resize', () => {
                  x = (Math.random() * (canvas.width));
                  y = Math.random() * 150;
@@ -64,31 +65,34 @@ class Portfolio_Controller {
                     radius *= 1.5;
                 }
                 draw();
-                console.log('ici')
+                console.log('ici');
             });
             draw();
             function draw() {
+                //---------------------1
                 ctx.save();
                 ctx.beginPath();
                 ctx.arc(x, y, radius, 0, 2 * Math.PI);
                 ctx.lineWidth = 3;
-                ctx.strokeStyle = '#ECC4C4';
+                ctx.strokeStyle = color;
                 ctx.stroke();
-                x += Math.random() > 0.3 ? -x / 2 : x / 2;
-                y += 500;
+                //---------------------2
+                x += Math.random() > 0.5 ? -x/2 : x/2 ;
+                y += 200;
                 radius -= 50 + (Math.random() * (100 - 50))
                 ctx.beginPath();
                 ctx.arc(x, y, radius, 0, 2 * Math.PI);
                 ctx.lineWidth = 3;
-                ctx.strokeStyle = '#ECC4C4';
+                ctx.strokeStyle = color;
                 ctx.stroke();
+                //---------------------3
                 x += Math.random() > 0.5 ? -x : x;
-                y += 500;
+                y += 300;
                 radius += 50 + (Math.random() * (100 - 50))
                 ctx.beginPath();
                 ctx.arc(x, y, radius, 0, 2 * Math.PI);
                 ctx.lineWidth = 3;
-                ctx.strokeStyle = 'red';
+                ctx.strokeStyle = color;
                 ctx.stroke();
                 ctx.restore();
             }

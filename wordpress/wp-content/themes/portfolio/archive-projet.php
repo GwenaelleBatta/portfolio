@@ -6,7 +6,7 @@
 		<section class="projects">
 			<h2 class="projects__title hidden"><?= __('Projets', 'portfolio') ?></h2>
 			<?php if (($projets = portfolio_get_projets())->have_posts()):while ($projets->have_posts()): $projets->the_post(); ?>
-				<article aria-labelledby="<?=get_post_field('post_name')?>" class="projects__article">
+				<article aria-labelledby="<?=get_post_field('post_name')?>" class="projects__article slide-in">
 					<div class="projects__cards">
 						<header class="projects__head">
 							<h3 id="<?=get_post_field('post_name')?>" class="projects__title" aria-level="3"><?= get_the_title() ?></h3>
