@@ -32,9 +32,7 @@ class Portfolio_Controller {
                 // d'intersection pour un des éléments cible:
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                } //else {
-                    //entry.target.classList.remove('active');
-                //}
+                }
             });
         };
 

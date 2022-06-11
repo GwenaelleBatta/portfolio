@@ -2,8 +2,9 @@
 @import url("https://use.typekit.net/tsm1hfq.css");
 
 //------------------------------1
+
 *::selection {
-  background-color: #ABD4D0;
+  background-color: #F3E1CF;
 }
 
 body {
@@ -65,6 +66,10 @@ svg{
   border: 0;
 }
 
+.form__error{
+  color: #E03028;
+}
+
 .header__nav {
   display: flex;
 }
@@ -82,7 +87,7 @@ svg{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 15px 30px;
+  padding: 0.8823529411764706em 1.764705882352941em; /*15/17 30/17*/
 }
 
 .nav__item {
@@ -97,12 +102,13 @@ svg{
 }
 
 .nav__link {
-  font-size: 20px; /*20/17*/
+  font-size: 1.176470588235294em; /*20/17*/
   text-align: center;
   text-decoration: none;
   color: #B1516D;
   font-weight: 500;
   padding: 0.35em 0.5em; /*7/20 10/20*/
+  transition: all 0.3s ease-in-out;
 }
 
 .intro {
@@ -149,6 +155,7 @@ svg{
   text-decoration: none;
   color: #B1516D;
   font-size: 0.7647058823529412em; /*13/17*/
+  transition: all 0.3s ease-in-out;
 }
 
 .contact__position {
@@ -423,6 +430,10 @@ p.singleProject__description {
   text-decoration: none;
 }
 
+.footer__thumb path{
+  transition: all 0.3s ease-in-out;
+}
+
 //------------------------------12
 
 textarea, input[type=text] {
@@ -449,6 +460,7 @@ textarea, input[type=text] {
   min-width: 2.666666666666667em;
   padding: 0;
   justify-self: start;
+  transition: all 0.3s ease-in-out;
 
 }
 
@@ -562,6 +574,7 @@ textarea, input[type=text] {
 }
 
 //------------------------------21
+
 .nav__item:nth-of-type(1) a {
   content: "";
   opacity: 0;
@@ -601,6 +614,7 @@ article.projects__article:first-of-type {
   text-transform: uppercase;
   max-height: 1.666666666666667em; /*30/17*/
 }
+
 .footer__thumb:hover path{
   fill: #E0B487;
 }
@@ -619,6 +633,7 @@ div.singleProjet__nav a.singleProjet__link {
   text-decoration: none;
   text-transform: uppercase;
   border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 //------------------------------30
@@ -651,21 +666,14 @@ div.singleProjet__nav a.singleProjet__link:hover {
   background-image: url("../../img/logo-GB-hover.svg");
 }
 
-//------------------------------31
-
-.footer_item:first-child img:hover {
-  border-radius: 12px;
-  background-color: #E0B487;
+.projects__article:nth-child(even) .projects__picture {
+  border: solid 3px #E0B487;
+  border-radius: 0 36.796875%; /*172*/
 }
 
-.footer_item:nth-child(2) img:hover {
-  border-radius: 3px;
-  background-color:#E0B487;
-}
-
-.footer_item:nth-child(3) img:hover {
-  border-radius: 20px;
-  background-color: #E0B487;
+.projects__article:nth-child(odd) .projects__picture {
+  border: solid 3px #E0B487;
+  border-radius: 36.796875% 0; /*172*/
 }
 
 //------------------------------40
@@ -688,7 +696,7 @@ div.singleProjet__nav a.singleProjet__link:hover {
 
 .projects__article:nth-child(even) .projects__picture .projects__fig img {
   box-shadow: 10px 3px 6px #C2C2C2;
-  border-radius: 0 36.796875%; /*172px*/
+  border-radius: 0 36.796875%; /*172*/
 }
 
 //------------------------------50
@@ -704,16 +712,7 @@ div.singleProjet__nav a.singleProjet__link:hover {
   text-decoration: none;
   text-transform: uppercase;
   border: none;
-}
-
-.projects__article:nth-child(even) .projects__picture {
-  border: solid 3px #E0B487;
-  border-radius: 0 36.796875%; /*172*/
-}
-
-.projects__article:nth-child(odd) .projects__picture {
-  border: solid 3px #E0B487;
-  border-radius: 36.796875% 0; /*172*/
+  transition: all 0.3s ease-in-out;
 }
 
 .projects__article:nth-child(even) .projects__picture:hover .projects__fig{
@@ -728,6 +727,13 @@ div.singleProjet__nav a.singleProjet__link:hover {
 
 .coordinate__title, .form__title, .confident__title, .career__title, .who__title, {
   margin-bottom: 1.666666666666667em; /*50/30*/
+}
+
+//------------------------------61
+
+.form__input:focus, textarea.form__input:focus, .form__select:focus {
+  background-color: #F8F6F4;
+
 }
 
 //------------------------------70
@@ -778,6 +784,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
 //--------------------Médias queries---------------------
 
 @media (max-width: 480px) {
+
   //----------------------------1
 
   body {
@@ -787,6 +794,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   h2 {
     font-size: 1.666666666666667em;
   }
+
   //----------------------10
 
   .burger__line { /*10*/
@@ -852,6 +860,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
     background-position: center;
     padding: 0;
     justify-self: start;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav__checkbox { /*10*/
@@ -1017,7 +1026,6 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
     font-size: 0.6666666666666667em; /*10/15*/
   }
 
-
   //----------------------11
 
   h2.projects__title {
@@ -1052,9 +1060,11 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
     margin-right: 0;
     min-width: 100%;
   }
+
   .nav__logo:hover{
     background-image: url("../../img/logo-GB-hover.svg");
   }
+
   .nav__item:nth-of-type(2) {
     flex: none;
     justify-content: center;
@@ -1112,6 +1122,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
     top: 0;
     transition: all 0.3s ease-in-out;
   }
+
   .nav__item:first-child:hover{
     background-image: none;
   }
@@ -1146,6 +1157,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   }
 
   //-------------------------70
+
   .projects .projects__article:nth-child(odd) .projects__picture, .project:nth-child(odd) .project__picture {
     margin-left: 0;
   }
@@ -1165,11 +1177,11 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   }
 
   //--------------------------92
+
   .projects__header h2.projects__title, .about .about__title, .contact .contact__title, .projects h2.projects__title, .legales__title {
     margin-left: 0;
     margin-top: 4.666666666666667em; /*100/15*/
   }
-
 
 }
 
@@ -1183,7 +1195,9 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   h2 {
     font-size: 1.666666666666667em;
   }
+
   //----------------------10
+
   .burger__line { /*10*/
     background: #B1516D;
     display: block;
@@ -1232,6 +1246,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
     background-position: center;
     padding: 0;
     justify-self: start;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav__checkbox { /*10*/
@@ -1506,6 +1521,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   }
 
   //----------------------21
+
   .nav__item:first-child a {
     position: relative;
     opacity: 1;
@@ -1525,9 +1541,11 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   }
 
   //----------------------30
+
   .nav__item:first-child:hover{
     background-image: none;
   }
+
   .nav__checkbox:checked ~ .nav__position { /*30*/
     top: 0;
     transition: all 0.3s ease-in-out;
@@ -1562,7 +1580,6 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   .layout__contact, .layout__legales, .layout__about, .layout__project, .layout__singleProjet {
     padding: 0 3em;
   }
-
 
   //----------------------64
 
@@ -1693,6 +1710,7 @@ h3.projects__title, .project__title, .career__title, .who__title, .contact__sect
   .legales__position {
     margin-bottom: 9.5em;
   }
+
   //-----------------------20
 
   .nav__checkbox, .burger { /*20*/

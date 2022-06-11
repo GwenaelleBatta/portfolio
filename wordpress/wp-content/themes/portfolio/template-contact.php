@@ -41,10 +41,10 @@
 					<h2 id="contactForm" class="form__title"
 						aria-level="2"><?= __('Formulaire de contact', 'portfolio') ?></h2>
 					<?php if (!isset($_SESSION['contact_form_feedback']) || !$_SESSION['contact_form_feedback']['success']) : ?>
-						<form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="form__form "
+						<form action="<?=get_home_url();?>/wp-admin/admin-post.php" method="POST" class="form__form "
 							  id="contact-form">
 							<?php if (isset($_SESSION['contact_form_feedback'])) : ?>
-								<p><?= __('Oups ! Il y a des erreurs dans le formulaire', 'portfolio') ?></p>
+								<p class="form__error" ><?= __('Oups ! Il y a des erreurs dans le formulaire', 'portfolio') ?></p>
 							<?php endif; ?>
 							<div class="form__position">
 								<div class="form__field">

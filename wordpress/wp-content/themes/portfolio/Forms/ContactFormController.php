@@ -54,11 +54,10 @@ class ContactFormController extends BaseFormController
         ]);
 
         // Générer un email contenant l'URL vers le post en question
-        $feedback = 'Bonjour, Vous avez un nouveau message.<br />';
-        $feedback .= 'Y accéder : ' . get_edit_post_link($id);
+        $feedback = 'Bonjour, Vous avez un nouveau message.';
 
         // Envoyer l'email à l'admin
-        wp_mail(get_bloginfo('admin_email'), 'Nouveau message !', $feedback);
+        wp_mail(get_bloginfo('admin_email'), 'Nouveau message !', $this->data['firstname'], $this->data['message']);
     }
 
     protected function redirectWithSuccess()

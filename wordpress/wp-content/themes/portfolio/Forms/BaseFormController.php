@@ -41,7 +41,6 @@ abstract class BaseFormController
     protected function validateData()
     {
         $errors = [];
-        $old = [];
 
         foreach ($this->getValidatableAttributes() as $attribute => $validators) {
             $errors = $this->validateAttribute($errors, $attribute, $validators);

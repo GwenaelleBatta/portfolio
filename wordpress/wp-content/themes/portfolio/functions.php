@@ -201,9 +201,10 @@ function portfolio_get_menu_items($location)
     return $items;
 }
 add_action('admin_post_submit_contact_form', 'portfolio_handle_submit_contact_form');
-function portfolio_handle_submit_contact_form()
-{
-    //Instancier le controller du form
+add_action('admin_post_nopriv_submit_contact_form', 'portfolio_handle_submit_contact_form');
+
+function portfolio_handle_submit_contact_form() {
+    // Instancier le controlleur du formulaire
     $form = new ContactFormController($_POST);
 }
 
@@ -227,7 +228,7 @@ function portfolio_get_contact_field_error($field)
         return '';
     }
 
-    return '<p>Ce champ ne respecte pas : ' . $_SESSION['contact_form_feedback']['errors'][$field] . '</p>';
+    return '<p  class="form__error">Ce champ ne respecte pas : ' . $_SESSION['contact_form_feedback']['errors'][$field] . '</p>';
 }
 function portfolio_mix($path)
 {
